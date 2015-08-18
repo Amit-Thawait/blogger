@@ -1,0 +1,7 @@
+<%= form_for([@blog, @comment], remote: true) do %>
+<p>
+<strong>Post a comment :</strong><br/>
+<%= text_area_tag(:comment) %>
+</p>
+<% end %>
+

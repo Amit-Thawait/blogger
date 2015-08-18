@@ -25,5 +25,12 @@
   <%= @blog.published_at %>
 </p>
 
+<%= render 'comments/form' %>
+<% @comments.each do |comment| %>
+  <p>
+    <strong>Comments:</strong>  
+    <%= render partial: 'comments/comment', locals: {comment: comment} %>
+  </p>
+<% end %>
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
