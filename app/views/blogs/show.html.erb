@@ -27,10 +27,12 @@
 
 <%= render 'comments/form' %>
 <% @comments.each do |comment| %>
+  <% if comment.id %>
   <p>
     <strong>Comments:</strong>  
     <%= render partial: 'comments/comment', locals: {comment: comment} %>
   </p>
+  <% end %>
 <% end %>
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
